@@ -1,7 +1,7 @@
 /**
  * @file cell.h
  * @author equipo_23
- * @brief cabecera de la clase cell
+ * @brief Fichero de cabecera de la clase Cell
  */
 
 #include <iostream>

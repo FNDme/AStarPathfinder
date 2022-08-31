@@ -20,7 +20,7 @@ int main(void)
         std::cin >> output_decision;
         std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
     }
-    
+
     // Tipo de funcionamiento
     int decision = 0;
     while ((decision != 1) && (decision != 2))
@@ -146,7 +146,6 @@ int main(void)
             std::cout << BOLDCYAN << "\n\t1. Distancia de Manhattan\n" << RESET;
             std::cout << BOLDCYAN << "\n\t2. Distancia Euclideana" << GREEN << "  (Mejor opcion)\n" << RESET;
         }
-        
         std::cout << BOLDCYAN << "\n\t3. Distancia de Chevyshev\n" << RESET;
         std::cout << GREEN << "\n\t Su elección >>\t" << RESET;
         std::cin >> formula;
@@ -157,7 +156,7 @@ int main(void)
     statistics solution = mapa.solve(nMovements - 1, formula);
     if (output_decision == 1)
     {
-        if(solution.solved) 
+        if(solution.solved)
         {
             mapa.printSol();
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
@@ -167,7 +166,7 @@ int main(void)
             std::cout << BOLDCYAN << "\n\tCoste de la solucion: " << solution.coste << "\n" << RESET;
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
         }
-        else 
+        else
         {
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
             std::cout << BOLDCYAN << "\n\tNo se ha podido encontrar la solucion del mapa" << RESET;
@@ -175,7 +174,7 @@ int main(void)
         }
     }
     else
-    {   if(solution.solved) 
+    {   if(solution.solved)
         {
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
             std::cout << BOLDCYAN << "\n\tTiempo: " << solution.time << "s\n" << RESET;
@@ -185,13 +184,12 @@ int main(void)
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
             mapa.printSolFile("output.txt", solution);
         }
-        else 
+        else
         {
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
             std::cout << BOLDCYAN << "\n\tNo se ha podido encontrar la solucion del mapa" << RESET;
             std::cout << YELLOW << "\n--------------------------------------------------------\n" << RESET;
         }
     }
-    
     return 0;
 }

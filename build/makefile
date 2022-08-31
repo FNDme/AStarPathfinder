@@ -28,3 +28,7 @@ Taxi: $(OBJ)
 
 clean:
 	rm -f $(ODIR)/*.o *~ $(INCDIR)/*~
+
+cleanall: clean
+	rm -f $(ODIR)/*.o *~ $(INCDIR)/*~
+	rm -f Taxi

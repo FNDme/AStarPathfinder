@@ -1,5 +1,4 @@
 #include <math.h>
-
 #include "cell.h"
 
 // Constructor por defecto
@@ -57,7 +56,7 @@ float Cell::getFCost()
 }
 
 // Devuelve un puntero a la celda padre
-Cell* Cell::getFather()
+Cell *Cell::getFather()
 {
     return father_;
 }
@@ -92,7 +91,7 @@ void Cell::setPos(std::pair<int, int> pos)
 }
 
 // Establece la direccion del padre de la celda
-void Cell::setFather(Cell* father)
+void Cell::setFather(Cell *father)
 {
     father_ = father;
 }
@@ -115,22 +114,23 @@ float Cell::chevyshevDistance_(std::pair<int, int> point, std::pair<int, int> de
     return std::max(abs(point.first - destination.first), abs(point.second - destination.second));
 }
 
-float Cell::evaluate_(std::pair<int, int> destination, int whichFormula) {
-
+float Cell::evaluate_(std::pair<int, int> destination, int whichFormula)
+{
     float aux;
-    switch(whichFormula) {
-        case 0:
-            aux = cost_ + manhattanDistance_(getPos(), destination);
-            break;
-        case 1:
-            aux = cost_ + euclideanDistance_(getPos(), destination);
-            break;
-        case 2:
-            aux = cost_ + chevyshevDistance_(getPos(), destination);
-            break;
-        default:
-            aux = cost_ + manhattanDistance_(getPos(), destination);
-            break;
+    switch (whichFormula)
+    {
+    case 0:
+        aux = cost_ + manhattanDistance_(getPos(), destination);
+        break;
+    case 1:
+        aux = cost_ + euclideanDistance_(getPos(), destination);
+        break;
+    case 2:
+        aux = cost_ + chevyshevDistance_(getPos(), destination);
+        break;
+    default:
+        aux = cost_ + manhattanDistance_(getPos(), destination);
+        break;
     }
     return aux;
 }

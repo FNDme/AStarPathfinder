@@ -1,7 +1,7 @@
 /**
  * @file town.h
  * @author equipo_23
- * @brief cabecera de la clase town
+ * @brief Fichero de cabecera de la clase Town
  */
 
 #include <iostream>

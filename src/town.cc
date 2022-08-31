@@ -67,8 +67,7 @@ bool town::setEndPos(int X, int Y)
         endPos_.second = Y - 1;
         return true;
     }
-    else
-        return false;
+    return false;
 }
 
 // Generacion de los obstaculos de forma aleatoria
@@ -123,11 +122,8 @@ bool town::genMapFile(std::string filename)
         File.close();
         return true;
     }
-    else
-    {
-        File.close();
-        return false;
-    }
+    File.close();
+    return false;
 }
 
 // Limpiador de obstaculos
@@ -261,11 +257,8 @@ bool town::printSolFile(std::string filename, statistics stats)
         File.close();
         return true;
     }
-    else
-    {
-        File.close();
-        return false;
-    }
+    File.close();
+    return false;
 }
 
 // Funcion de resolucion
@@ -777,8 +770,7 @@ bool town::isValid_(int X, int Y)
 {
     if (X >= 0 && Y >= 0 && X < width_ && Y < height_ && !map_[X][Y])
         return true;
-    else
-        return false;
+    return false;
 }
 
 // Funcion que comprueba si un nodo esta en una lista y en caso afirmativo devuelve el indice
